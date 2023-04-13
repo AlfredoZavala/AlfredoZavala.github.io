@@ -1,0 +1,303 @@
+/* PORTFOLIO CSS_STYLING */
+
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+/* -- CUSTOM VAR : VALUES -- */
+:root {
+  --background-color: #171717;
+  --base-color: #434a56;
+  --gray-color-primary: #858585;
+  --active-color: #30a2d2;
+}
+
+* {
+  /* Reseting the borders and padding */
+  margin: 0;
+  padding: 0;
+}
+
+/* Box Sizing and Font Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box; /*keeps everything in container */
+  /* Set font size for easy rem calculations 
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+     */
+  font-size: 62.5%;
+  scrollbar-color: smooth;
+}
+
+/* I am using the em unit for breakpoints 
+ * The calculation is the following 
+ * SCREEN_SIZE / BROWSER_BASE _FONT_SIZE = BREAKPOINT
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em 
+ */
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+/* 460x / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* -- BASE STYLES  -- */
+body {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.7rem; /* 17px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-color-primary);
+  background: var(--background-color);
+}
+
+
+
+/*  __NAVBAR SECTION  */
+
+
+.navbar-section {
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 7em;
+  }
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+@media (max-width: 61.25em) {
+  .nav-list {
+    flex-direction: column;
+  }
+}
+
+a:visited,
+a:active,
+a:link {
+  text-decoration: none;
+  color: #858585;
+  transition: 1s;
+}
+
+.nav-list a {
+  margin: 10px 16px;
+  padding: 0.5em 4em;
+
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--gray-color-primary);
+}
+
+
+a:hover {
+  /*border-bottom: 1px solid var(--active-color);*/
+  color: var(--active-color);
+  border: 1px solid var(--active-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/* __WELCOME SECTION */
+
+#welcome_section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10rem;
+
+  }
+  
+  @media (max-width: 61.25em){
+    #welcome_section {
+      flex-direction: column;
+      justify-content: center;
+    align-items: center;
+    }
+  }
+  
+  #welcome_statement {
+    font-size: 5rem;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #welcome {
+    border-bottom: 1px solid var(--active-color);
+    padding: 0 3em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #welcome_par {
+    font-size: 2.5rem;
+    padding: 0.5em 2em;
+    
+    display: flex;
+    justify-content: left;
+  }
+  
+  @media (max-width: 61.25em){
+    #welcome_par{
+      padding: 0.5em 0.75em;
+    }
+  }
+  
+  #welcome_img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #wel_img {
+    border-radius: 50px;
+  }
+
+  
+/* __PROJECTS SECTION */
+
+
+/* __PROJEKTS SECTION */
+
+.proj-section {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 12rem 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+#proj-header {
+  margin: 3rem auto;
+  border-bottom: 1px solid var(--active-color);
+  width: 20em;
+  height: 2em;
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+
+  width: 100%;
+  padding-top: 3rem;
+}
+
+.proj-img {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.proj-title {
+  font-size: 2rem;
+  padding: 1rem 0.5rem;
+  color: var(--gray-color-primary);
+}
+
+
+/* __CONTACT_SECTION */
+#contact-header {
+  margin: 3rem auto;
+  border-bottom: 1px solid var(--active-color);
+  width: 20em;
+  text-align: center;
+  justify-content: center;
+  height: 2em;
+
+}
+
+.contact-section {
+  width: 100%;
+  line-height: 1.85em;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 61.25em) {
+  .contact-section {
+    height: 100%;
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: center;
+  
+}
+@media (max-width: 61.25em) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+  
+
+.contact-img {
+  border-radius: 50px;
+  margin: 16px;
+} 
+
+@media (max-width: 61.25em) {
+    .contact-img {
+      margin: 10px auto  ;
+
+  }
+}
+.contact {
+  margin-top: 0;
+}
+@media (max-width: 61.25em) {
+    .contact {
+      margin: auto;
+  }
+}
+
+.contact-title {
+  margin: 0 10px;
+  padding: 5px;
+}
+
+.contact-info {
+  margin: 10px;
+  padding: 5px;
+}
+
+
+
+
